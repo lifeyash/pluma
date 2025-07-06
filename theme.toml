@@ -1,0 +1,8 @@
+name = "Pluma"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "A minimal Material 3-inspired portfolio and blogging Hugo theme"
+homepage = "https://lifeyash.github.io/pluma"
+tags = ["minimal", "material3", "blog", "portfolio"]
+features = ["responsive", "tags", "clean", "fast"]
+min_version = "0.80.0"

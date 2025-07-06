@@ -1,0 +1,11 @@
+@import "style.css";
+
+/* Define CSS variables, not themes, here */
+body {
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+}
+
+a {
+  color: var(--md-sys-color-primary);
+}
