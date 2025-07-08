@@ -1,9 +1,15 @@
 <div class="navbar">
   <div class="navbar-left">
     <h1 class="site-title">{{ site.Title }}</h1>
+  </div>
+
+  <div class="navbar-center">
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
   </div>
-  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-    <span class="material-symbols-outlined">light_mode</span>
-  </button>
+
+  <div class="navbar-right">
+    <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span class="material-symbols-outlined">light_mode</span>
+    </button>
+  </div>
 </div>
