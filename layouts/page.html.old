@@ -1,0 +1,33 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+{{ $dateHuman := .Date | time.Format ":date_long" }}
+<time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+
+<div class="post-content">
+  {{ .Content }}
+</div>
+
+{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+
+<!-- Post Navigation -->
+<nav class="post-navigation">
+  {{ with .PrevInSection }}
+  <a href="{{ .RelPermalink }}" class="nav-button prev">
+    <span class="material-icons">arrow_back</span>
+    <span class="nav-text">{{ .Title }}</span>
+  </a>
+  {{ else }}
+  <span></span>
+  {{ end }}
+
+  {{ with .NextInSection }}
+  <a href="{{ .RelPermalink }}" class="nav-button next">
+    <span class="nav-text">{{ .Title }}</span>
+    <span class="material-icons">arrow_forward</span>
+  </a>
+  {{ end }}
+</nav>
+
+{{ end }}
