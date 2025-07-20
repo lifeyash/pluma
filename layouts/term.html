@@ -1,7 +1,21 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+  <section class="tag-page">
+    <h1 class="tag-title">{{ .Title }}</h1>
+
+    {{ if .Content }}
+      <div class="tag-description">
+        {{ .Content }}
+      </div>
+    {{ end }}
+
+    <div class="tag-posts">
+      {{ range .Pages }}
+        <article class="tag-post">
+          <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+          <p>{{ .Summary | plainify | truncate 160 }}</p>
+          <a href="{{ .RelPermalink }}" class="read-more">Read more</a>
+        </article>
+      {{ end }}
+    </div>
+  </section>
 {{ end }}
